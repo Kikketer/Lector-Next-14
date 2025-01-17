@@ -1,21 +1,9 @@
-import { GlobalWorkerOptions } from "pdfjs-dist";
-import { Root, Pages, Page, CanvasLayer } from "@unriddle-ai/lector";
-import "pdfjs-dist/web/pdf_viewer.css";
+import PDFViewer from "../components/PDFViewer";
 
-// Set up the worker
-GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.mjs",
-  import.meta.url
-).toString();
-
-export function PDFViewer() {
+export default function View() {
   return (
-    <Root fileURL="/sample.pdf">
-      <Pages>
-        <Page>
-          <CanvasLayer />
-        </Page>
-      </Pages>
-    </Root>
+    <div className="p-4">
+      <PDFViewer />
+    </div>
   );
 }
